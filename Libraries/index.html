@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="JavaScript/myScript.js"></script>
+    <script src="JavaScript/module.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="CSS/myStyle.css">
+</head>
+<body onload="foodTallyModule.init()" onunload="foodTallyModule.storeList()">
+    <!-- <p>This is a paragraph</p>
+    <button type="button" class="ui-button ui-corner-all ui-widget">Click</button> -->
+    <div class="flex-container">
+        <form action="#">
+            <div id="accordion">
+                <h3>Pizza Entry</h3>
+                <div>
+                    <label class="required">Pizza Name</label> <br>
+                    <input type="text" name="pizzaname" id="pizzaname"> <br>
+                    <label class="required">How many votes</label> <br>
+                    <input type="number" name="pizzanum" id="pizzanum"> <br>
+                    <button type="button" class="ui-button ui-widget ui-corner-all" id="pizzabtn" >Add Pizza Tally</button> <br>
+                </div>
+                <h3>Dessert Entry</h3>
+                <div>
+                    <label class="required">Dessert Name</label> <br>
+                    <input type="text" name="dessertname" id="dessertname"> <br>
+                    <label class="required">How many votes</label> <br>
+                    <input type="number" name="dessertnum" id="dessertnum"> <br>
+                    <button type="button" class="ui-button ui-widget ui-corner-all" id="dessertbtn">Add Dessert Tally</button> <br>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="flex-container">
+        <h2>Stats</h2>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Pizza Stats</a></li>
+                <li><a href="#tabs-2">Dessert Stats</a></li>
+            </ul>
+            <div id="tabs-1">
+                <table id="pizzatable">
+                    <thead id="pizzatable">
+                        <tr>
+                            <th>Name of Pizza</th>
+                            <th># of votes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pizzabody">
+
+                    </tbody>
+                </table>
+                <button type="button" class="ui-button ui-widget ui-corner-all" id="pizzaclear" >Clear List</button>
+                <button type="button" class="ui-button ui-widget ui-corner-all" id="pizzagraph" >Display Graph</button>
+            </div>
+            <div id="tabs-2">
+                <table id="desserttable">
+                    <thead id="desserthead">
+                        <tr>
+                            <th>Name of Dessert</th>
+                            <th># of votes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dessertbody">
+
+                    </tbody>
+                </table>
+                <button type="button" class="ui-button ui-widget ui-corner-all" id="dessertclear" >Clear List</button>
+                <button type="button" class="ui-button ui-widget ui-corner-all" id="dessertgraph" >Display Graph</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-graph" class="ui-dialog-content ui-widget-content">
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </div>
+
+
+
+
+</body>
+</html>
